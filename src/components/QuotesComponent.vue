@@ -14,7 +14,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const currentQuote = ref({text: '', author: ''}) //can also make this an empty ref('') or an emtpy ref object ref({}). it will still work. 
+const currentQuote = ref({text: '', author: ''})  
 
 const quotes = ref([
     {
@@ -48,7 +48,7 @@ const quotes = ref([
 
 const getRandomQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.value.length)
-    currentQuote.value = quotes.value[randomIndex] //now currentQuote and the ojbect of the quotes that lies at that index of the array both contain the same object. Not making a new memory of it, but a reference to the same object.
+    currentQuote.value = quotes.value[randomIndex]  
 }
 
 onMounted(getRandomQuote)
